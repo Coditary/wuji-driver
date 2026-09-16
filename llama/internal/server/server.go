@@ -146,7 +146,7 @@ func (s *Server) startLocked(modelPath string, loras []driver.LoRARef) error {
 	runAs := effectiveRunAs(s.cfg.ServerRunAs, modelPath)
 	serverBin, binDir := resolveServerBin(s.cfg.ServerBin, runAs)
 	if _, err := os.Stat(serverBin); err != nil {
-		return fmt.Errorf("inference server binary not found at %s (run: make -C ../driver/llama setup && make -C ../driver/llama install-sudoers)", serverBin)
+		return fmt.Errorf("inference server binary not found at %s (run: make -C ../../plugins/wuji/llama setup && make -C ../../plugins/wuji/llama install-sudoers)", serverBin)
 	}
 	if runAs != "" {
 		if err := verifyRunAs(runAs, serverBin, binDir); err != nil {

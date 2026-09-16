@@ -17,7 +17,7 @@ Each subdirectory is a standalone Go module that builds a `wuji-driver-*` binary
 ## Build (from monorepo checkout)
 
 ```bash
-cd llama && make build    # → ../../wuji-core/bin/ when nested in wuji-ai bundle
+cd llama && make build WUJI_BIN_DIR=../../../core/wuji-core/bin
 ```
 
 ## Install via ReqPack
