@@ -14,9 +14,11 @@ setup:
 	mkdir -p $(VENDOR_DIR); \
 	curl -L "$$url" | tar --no-same-owner -xz -C $(VENDOR_DIR) --strip-components=1
 
+WUJI_BIN_DIR ?= bin
+
 build:
 	# vendor/ holds llama.cpp binaries, not Go modules — avoid auto-vendor mode.
-	go build -mod=mod -o bin/wuji-driver-llama ./cmd/wuji-driver-llama
+	go build -mod=mod -o $(WUJI_BIN_DIR)/wuji-driver-llama ./cmd/wuji-driver-llama
 
 model-list:
 	@find models -name '*.gguf' 2>/dev/null | sed 's|^models/||' | sort || echo "No models — run: make link-ollama"

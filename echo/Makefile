@@ -1,4 +1,6 @@
 .PHONY: build
 
+WUJI_BIN_DIR ?= bin
+
 build:
-	go build -mod=mod -o bin/wuji-driver-echo ./cmd/wuji-driver-echo
+	go build -mod=mod -o $(WUJI_BIN_DIR)/wuji-driver-echo ./cmd/wuji-driver-echo
