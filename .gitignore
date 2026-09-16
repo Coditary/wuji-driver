@@ -1,0 +1,9 @@
+**/bin/
+**/vendor/
+**/*.test
+**/*.out
+llama/models/ollama/*
+!llama/models/ollama/.gitkeep
+llama/models/*.gguf
+llama/models/*.bin
+**/models/ollama/manifest.json
